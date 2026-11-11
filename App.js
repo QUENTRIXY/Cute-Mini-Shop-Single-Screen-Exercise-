@@ -1,6 +1,7 @@
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
+
 import { CartProvider } from './CartContext';
 import CartTab from './CartTab';
 import ShopTab from './ShopTab';
@@ -14,18 +15,30 @@ export default function App() {
         <Tab.Navigator
           screenOptions={{
             headerShown: false,
+
             tabBarActiveTintColor: '#397A4D',
             tabBarInactiveTintColor: '#9BAF9F',
+
             tabBarStyle: {
               backgroundColor: '#FFFFFF',
-              height: 65,
-              paddingBottom: 10,
-              paddingTop: 8,
+              height: 80,
+              paddingBottom: 12,
+              paddingTop: 10,
               borderTopColor: '#D5E9D9',
+              borderTopWidth: 1,
+              elevation: 8,
             },
+
+            tabBarItemStyle: {
+              flex: 1,
+              justifyContent: 'center',
+              alignItems: 'center',
+            },
+
             tabBarLabelStyle: {
               fontWeight: 'bold',
-              fontSize: 13,
+              fontSize: 16,
+              marginTop: 3,
             },
           }}
         >
