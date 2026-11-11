@@ -57,7 +57,7 @@ export default function CartTab() {
 
               <TouchableOpacity
                 style={styles.removeButton}
-                onPress={() => removeFromCart(product.id)}
+                onPress={() => removeFromCart(index)}
               >
                 <Text style={styles.removeText}>Remove</Text>
               </TouchableOpacity>

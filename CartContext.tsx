@@ -12,7 +12,7 @@ export type Product = {
 type CartContextType = {
   cart: Product[];
   addToCart: (product: Product) => void;
-  removeFromCart: (id: string) => void;
+  removeFromCart: (index: number) => void;
 };
 
 export const CartContext = createContext<CartContextType | undefined>(
@@ -26,9 +26,10 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     setCart((currentCart) => [...currentCart, product]);
   };
 
-  const removeFromCart = (id: string) => {
+  // Remove only the selected item
+  const removeFromCart = (index: number) => {
     setCart((currentCart) =>
-      currentCart.filter((item) => item.id !== id)
+      currentCart.filter((_, itemIndex) => itemIndex !== index)
     );
   };
 
